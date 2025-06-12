@@ -1,34 +1,61 @@
-<?xml version="1.0" ?>
-<diagrama>
-  <entidade nome="Construtora">
-    <atributo nome="codigo" chave_primaria="true"/>
-    <atributo nome="nome"/>
-    <atributo nome="nome_fantasia" opcional="true"/>
-    <atributo nome="telefone" multivalorado="true"/>
-  </entidade>
-  <entidade nome="Obra">
-    <atributo nome="codigo" chave_primaria="true"/>
-    <atributo nome="nome"/>
-    <atributo nome="logradouro"/>
-    <atributo nome="numero"/>
-    <atributo nome="complemento" opcional="true"/>
-  </entidade>
-  <entidade nome="Trabalhador">
-    <atributo nome="cpf" chave_primaria="true"/>
-    <atributo nome="nome"/>
-    <atributo nome="salario"/>
-  </entidade>
-  <entidade nome="Equipamento">
-    <atributo nome="codigo" chave_primaria="true"/>
-    <atributo nome="nome"/>
-    <atributo nome="valor_uso_diario"/>
-  </entidade>
-  <entidade nome="Categoria">
-    <atributo nome="codigo" chave_primaria="true"/>
-    <atributo nome="descricao"/>
-  </entidade>
-  <entidade nome="Alocacao">
-    <atributo nome="data_inicio"/>
-    <atributo nome="data_fim"/>
-  </entidade>
-</diagrama>
+<?xml version="1.0" encoding="UTF-8"?>
+<modelo versao="1.0" nome="Modelo Conceitual Construtora">
+  <propriedades>
+    <propriedade nome="tipo" valor="conceitual"/>
+  </propriedades>
+  <diagramas>
+    <diagrama nome="Diagrama Conceitual" tipo="conceitual">
+      <entidades>
+        <entidade nome="Construtora">
+          <atributos>
+            <atributo nome="codigo" chave_primaria="true"/>
+            <atributo nome="nome"/>
+            <atributo nome="nome_fantasia" opcional="true"/>
+            <atributo nome="telefone" multivalorado="true"/>
+          </atributos>
+        </entidade>
+        <entidade nome="Obra">
+          <atributos>
+            <atributo nome="codigo" chave_primaria="true"/>
+            <atributo nome="nome"/>
+            <atributo nome="logradouro"/>
+            <atributo nome="numero"/>
+            <atributo nome="complemento" opcional="true"/>
+          </atributos>
+        </entidade>
+        <entidade nome="Trabalhador">
+          <atributos>
+            <atributo nome="cpf" chave_primaria="true"/>
+            <atributo nome="nome"/>
+            <atributo nome="salario"/>
+          </atributos>
+        </entidade>
+        <entidade nome="Equipamento">
+          <atributos>
+            <atributo nome="codigo" chave_primaria="true"/>
+            <atributo nome="nome"/>
+            <atributo nome="valor_uso_diario"/>
+          </atributos>
+        </entidade>
+        <entidade nome="Categoria">
+          <atributos>
+            <atributo nome="codigo" chave_primaria="true"/>
+            <atributo nome="descricao"/>
+          </atributos>
+        </entidade>
+        <entidade nome="Alocacao">
+          <atributos>
+            <atributo nome="data_inicio"/>
+            <atributo nome="data_fim"/>
+          </atributos>
+        </entidade>
+      </entidades>
+      <relacionamentos>
+        <relacionamento nome="Possui" tipo="1:N" entidade1="Construtora" entidade2="Obra"/>
+        <relacionamento nome="Aloca" tipo="N:N" entidade1="Obra" entidade2="Equipamento" entidade_associativa="Alocacao"/>
+        <relacionamento nome="Pertence" tipo="N:1" entidade1="Equipamento" entidade2="Categoria"/>
+        <relacionamento nome="Trabalha_em" tipo="1:1" entidade1="Trabalhador" entidade2="Obra" obrigatorio_entidade1="true"/>
+      </relacionamentos>
+    </diagrama>
+  </diagramas>
+</modelo>
