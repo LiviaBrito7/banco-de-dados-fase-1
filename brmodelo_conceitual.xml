@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<diagrama>
+  <entidade nome="Construtora">
+    <atributo nome="codigo" chave_primaria="true"/>
+    <atributo nome="nome"/>
+    <atributo nome="nome_fantasia" opcional="true"/>
+    <atributo nome="telefone" multivalorado="true"/>
+  </entidade>
+  <entidade nome="Obra">
+    <atributo nome="codigo" chave_primaria="true"/>
+    <atributo nome="nome"/>
+    <atributo nome="logradouro"/>
+    <atributo nome="numero"/>
+    <atributo nome="complemento" opcional="true"/>
+  </entidade>
+  <entidade nome="Trabalhador">
+    <atributo nome="cpf" chave_primaria="true"/>
+    <atributo nome="nome"/>
+    <atributo nome="salario"/>
+  </entidade>
+  <entidade nome="Equipamento">
+    <atributo nome="codigo" chave_primaria="true"/>
+    <atributo nome="nome"/>
+    <atributo nome="valor_uso_diario"/>
+  </entidade>
+  <entidade nome="Categoria">
+    <atributo nome="codigo" chave_primaria="true"/>
+    <atributo nome="descricao"/>
+  </entidade>
+  <entidade nome="Alocacao">
+    <atributo nome="data_inicio"/>
+    <atributo nome="data_fim"/>
+  </entidade>
+</diagrama>
